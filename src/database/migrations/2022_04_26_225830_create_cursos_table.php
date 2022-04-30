@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->longText('descripcion');
             $table->string('duracion');
-            $table->float('precio', 8, 2);
+            $table->decimal('precio', $precision = 8, $scale = 2);
             $table->string('dificultad');
             $table->timestamps();
         });
