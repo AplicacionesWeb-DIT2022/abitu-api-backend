@@ -14,7 +14,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        return Alumno::all();
+        return view('alumnos.index');
     }
 
     /**
