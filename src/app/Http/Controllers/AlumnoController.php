@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alumno;
+use App\Http\Requests\AlumnoRequest;
 
 class AlumnoController extends Controller
 {
@@ -14,7 +15,8 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        return view('alumnos.index');
+        $alumnos = Alumno::get();
+        return view('alumnos.index', compact('alumnos'));
     }
 
     /**
@@ -23,10 +25,13 @@ class AlumnoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AlumnoRequest $request)
     {
-        $alumno = Alumno::create($request->all());
-        return $alumno;
+        // $alumno = Alumno::create($request->all());
+        // return $alumno;
+        
+        Alumno::create($request->all());
+        return redirect()->route('alumnos.index');
     }
 
     /**

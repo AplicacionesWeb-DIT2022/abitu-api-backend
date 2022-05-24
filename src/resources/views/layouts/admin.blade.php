@@ -20,6 +20,10 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('libs/sbadmin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    @stack('styles')
+
+    <link rel="stylesheet" href="{{asset('/css/main.css')}}">
+
 </head>
 
 <body id="page-top">
@@ -135,6 +139,10 @@
 
     <!-- Page level plugins -->
     <script src="{{asset('libs/chart.js/Chart.min.js')}}"></script>
+
+    @stack('scripts')
+
+    <script src="{{asset('js/main.js')}}"></script>
 
 </body>
 
