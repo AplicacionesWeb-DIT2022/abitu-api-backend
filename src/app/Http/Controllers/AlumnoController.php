@@ -73,6 +73,7 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         Alumno::destroy($id);
-        return \response(content: "El alumno a sido eliminado");
+        // return \response(content: "El alumno a sido eliminado");
+        return redirect()->route('alumnos.index');
     }
 }

@@ -11,6 +11,7 @@
 @section('content')
     @include('alumnos.modals.create')
     @include('alumnos.modals.update')
+    @include('alumnos.modals.delete')
     <div class="card">
         <div class="card-body">
             <table id="dt-products" class="table table-striped table-bordered dts">
@@ -35,7 +36,7 @@
                                     <i class="far fa-edit"></i>
                                 </a>
 
-                                <a href="" class="delete-form-data" data-toggle="modal" data-target="#deleteModal">
+                                <a href="" class="delete-form-data" data-toggle="modal" data-target="#deleteModal" onclick="deleteAlumno({{$alumno}})">
                                     <i class="far fa-trash-alt"></i>
                                 </a>
                             </td>
@@ -62,6 +63,11 @@
             $("#editAlumnoForm #apellido").val(alumno.apellido);
             $("#editAlumnoForm #dni").val(alumno.dni);
             $("#editAlumnoForm #edad").val(alumno.edad);
+        }
+
+        function deleteAlumno(alumno) {
+            $("#deleteAlumnoForm").attr('action', `/alumnos/${alumno.id}`);
+            $("#user").text(`${alumno.nombre} ${alumno.apellido}`);
         }
     </script>
 

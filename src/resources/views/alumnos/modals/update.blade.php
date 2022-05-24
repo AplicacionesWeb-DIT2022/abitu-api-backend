@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('alumnos.store')}}" role="form" method="POST" id="editAlumnoForm">
+                <form action="" role="form" method="POST" id="editAlumnoForm">
                     @method('PUT')
                     {{csrf_field()}}
                     <div class="row">
