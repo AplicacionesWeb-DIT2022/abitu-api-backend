@@ -53,10 +53,15 @@ class AlumnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    // public function update(Request $request, $id)
+    public function update(Request $request, Alumno $alumno)
     {
-        $alumno = Alumno::findOrFail($id)->update($request->all());
-        return $alumno;
+        // $alumno = Alumno::findOrFail($id)->update($request->all());
+        // return $alumno;
+        
+        $alumno->fill($request->all());
+        $alumno->save();
+        return redirect()->route('alumnos.index');
     }
 
     /**

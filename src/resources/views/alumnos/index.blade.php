@@ -10,6 +10,7 @@
 
 @section('content')
     @include('alumnos.modals.create')
+    @include('alumnos.modals.update')
     <div class="card">
         <div class="card-body">
             <table id="dt-products" class="table table-striped table-bordered dts">
@@ -30,7 +31,7 @@
                             <td>{{$alumno->dni}}</td>
                             <td>{{$alumno->edad}}</td>
                             <td>
-                                <a href="" class="edit-form-data" data-toggle="modal" data-target="#editModal">
+                                <a href="" class="edit-form-data" data-toggle="modal" data-target="#editModal" onclick="editAlumno({{$alumno}})">
                                     <i class="far fa-edit"></i>
                                 </a>
 
@@ -53,6 +54,16 @@
 @push('scripts')
     <script src="{{asset('/libs/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/libs/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+    <script>
+        function editAlumno(alumno){
+            $("#editAlumnoForm").attr('action',`/alumnos/${alumno.id}`);
+            $("#editAlumnoForm #nombre").val(alumno.nombre);
+            $("#editAlumnoForm #apellido").val(alumno.apellido);
+            $("#editAlumnoForm #dni").val(alumno.dni);
+            $("#editAlumnoForm #edad").val(alumno.edad);
+        }
+    </script>
 
     @if(!$errors->isEmpty())
         @if($errors->has('post'))
