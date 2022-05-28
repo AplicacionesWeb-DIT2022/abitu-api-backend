@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profesor;
+use App\Http\Requests\ProfesorRequest;
 
 class ProfesorController extends Controller
 {
@@ -14,8 +15,10 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        $profesores = Profesor::all();
-        return $profesores;
+        // $profesores = Profesor::all();
+        // return $profesores;
+        $profesores = Profesor::get();
+        return view('profesores.index', compact('profesores'));
     }
 
     /**
@@ -24,10 +27,12 @@ class ProfesorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProfesorRequest $request)
     {
-        $profesor = Profesor::create($request->all());
-        return $profesor;
+        // $profesor = Profesor::create($request->all());
+        // return $profesor;
+        Profesor::create($request->all());
+        return redirect()->route('profesores.index');
     }
 
     /**
@@ -49,10 +54,15 @@ class ProfesorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profesor $profesor, $id)
     {
-        $profesor = Profesor::findOrFail($id)->update($request->all());
-        return $profesor;
+        // $profesor = Profesor::findOrFail($id)->update($request->all());
+        // return $profesor;
+
+        // $profesor->fill($request->all());
+        // $profesor->save();
+        Profesor::findOrFail($id)->update($request->all());
+        return redirect()->route('profesores.index');
     }
 
     /**
@@ -64,6 +74,7 @@ class ProfesorController extends Controller
     public function destroy($id)
     {
         Profesor::destroy($id);
-        return \response(content: "El profesor a sido eliminado");
+        // return \response(content: "El profesor a sido eliminado");
+        return redirect()->route('profesores.index');
     }
 }

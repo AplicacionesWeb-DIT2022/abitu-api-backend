@@ -2,11 +2,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fa fa-graduation-cap"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    <div class="sidebar-brand-text mx-3">Academia Online</div>
 </a>
 
 <!-- Divider -->
@@ -38,7 +38,7 @@
 
 <!-- Nav Item - Profesores -->
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="{{route('profesores.index')}}">
         <i class="fas fa-fw fa-user-tie"></i>
         <span>Profesores</span>
     </a>
@@ -46,7 +46,7 @@
 
 <!-- Nav Item - Camadas -->
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="#">
         <i class="fas fa-fw fa-school"></i>
         <span>Camadas</span>
     </a>
@@ -54,7 +54,7 @@
 
 <!-- Nav Item - Cursos -->
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="#">
         <i class="fas fa-fw fa-table"></i>
         <span>Cursos</span>
     </a>
@@ -62,8 +62,8 @@
 
 <!-- Nav Item - Categoria Cursos -->
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
-        <i class="fas fa-fw fa-table"></i>
+    <a class="nav-link" href="#">
+        <i class="fas fa-fw fa-tag"></i>
         <span>Categorias Cursos</span>
     </a>
 </li>

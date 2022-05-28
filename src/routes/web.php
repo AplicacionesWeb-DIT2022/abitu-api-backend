@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\ProfesorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ use App\Http\Controllers\AlumnoController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/alumnos', AlumnoController::class);
+Route::resource('/profesores', ProfesorController::class);
