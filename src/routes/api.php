@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfesorController;
-use App\Http\Controllers\AlumnoController;
-use App\Http\Controllers\CursoController;
+use App\Http\Controllers\ApiControllers\CursoController;
+use App\Http\Controllers\ApiControllers\AlumnoController;
+use App\Http\Controllers\ApiControllers\ProfesorController;
 
 /*
 |--------------------------------------------------------------------------
