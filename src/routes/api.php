@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiControllers\CursoController;
 use App\Http\Controllers\ApiControllers\AlumnoController;
 use App\Http\Controllers\ApiControllers\ProfesorController;
+use App\Http\Controllers\ApiControllers\CamadaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('profesores', ProfesorController::class);
 Route::apiResource('alumnos', AlumnoController::class);
 Route::apiResource('cursos', CursoController::class);
+Route::apiResource('camadas', CamadaController::class);
