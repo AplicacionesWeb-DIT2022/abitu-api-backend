@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellido');
+            $table->integer('dni');
+            $table->integer('edad');
             $table->timestamps();
         });
     }
