@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use App\Http\Controllers\ProfesorController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/login', [SessionController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [SessionController::class, 'login']);
+Route::post('/logout', [SessionController::class, 'logout']);
 Route::resource('/alumnos', AlumnoController::class);
 Route::resource('/profesores', ProfesorController::class);
