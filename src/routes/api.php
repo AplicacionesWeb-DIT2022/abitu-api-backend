@@ -6,6 +6,7 @@ use App\Http\Controllers\ApiControllers\CursoController;
 use App\Http\Controllers\ApiControllers\AlumnoController;
 use App\Http\Controllers\ApiControllers\ProfesorController;
 use App\Http\Controllers\ApiControllers\CamadaController;
+use App\Http\Controllers\ApiControllers\CategoriaCursoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::apiResource('profesores', ProfesorController::class);
 Route::apiResource('alumnos', AlumnoController::class);
 Route::apiResource('cursos', CursoController::class);
 Route::apiResource('camadas', CamadaController::class);
+Route::apiResource('categorias_curso', CategoriaCursoController::class);
