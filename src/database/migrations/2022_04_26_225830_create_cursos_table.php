@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('duracion');
             $table->decimal('precio', $precision = 8, $scale = 2);
             $table->string('dificultad');
+            $table->foreignId('categoria_id')->nullable()->constrained('categorias_curso');
             $table->timestamps();
         });
     }

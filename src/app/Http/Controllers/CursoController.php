@@ -25,8 +25,8 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        $cursos = Curso::create($request->all());
-        return $cursos;
+        $curso = Curso::create($request->all());
+        return $curso;
     }
 
     /**

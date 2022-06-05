@@ -15,7 +15,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        return Curso::all();
+        return Curso::all()->load('categoria');
     }
 
     /**
@@ -26,8 +26,15 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        $cursos = Curso::create($request->all());
-        return $cursos;
+        $curso = new Curso();
+        $curso->nombre = $request->nombre;
+        $curso->descripcion = $request->descripcion;
+        $curso->duracion = $request->duracion;
+        $curso->precio = $request->precio;
+        $curso->dificultad = $request->dificultad;
+        $curso->categoria_id = $request->categoria_id;
+        $curso->save();
+        return $curso;
     }
 
     /**
@@ -38,7 +45,7 @@ class CursoController extends Controller
      */
     public function show($id)
     {
-        $curso = Curso::findOrFail($id);
+        $curso = Curso::findOrFail($id)->load('categoria');
         return $curso;
     }
 
