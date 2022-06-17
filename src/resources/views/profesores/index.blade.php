@@ -19,6 +19,8 @@
                 <tr>
                     <th class="text-center">Nombre</th>
                     <th class="text-center">Apellido</th>
+                    <th class="text-center">DNI</th>
+                    <th class="text-center">Edad</th>
                     <th class="text-center">Acciones</th>
                 </tr>
             </thead>
@@ -27,6 +29,8 @@
                     <tr class="text-center">
                         <td>{{$profesor->nombre}}</td>
                         <td>{{$profesor->apellido}}</td>
+                        <td>{{$profesor->dni}}</td>
+                        <td>{{$profesor->edad}}</td>
                         <td>
                             <a href="" class="edit-form-data" data-toggle="modal" data-target="#editModal" onclick="editProfesor({{$profesor}})">
                                 <i class="far fa-edit"></i>

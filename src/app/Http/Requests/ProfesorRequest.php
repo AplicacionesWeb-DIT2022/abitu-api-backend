@@ -26,6 +26,8 @@ class ProfesorRequest extends FormRequest
         return [
             'nombre' => ['required', 'string'],
             'apellido' => ['required', 'string'],
+            'dni' => ['required', 'integer'],
+            'edad' => ['required', 'integer']
         ];
     }
 

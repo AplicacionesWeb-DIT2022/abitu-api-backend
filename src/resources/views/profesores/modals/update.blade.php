@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-lg-6 form-group">
                             <div>
                                 <label for="dni" class="form-fields">DNI</label>
@@ -63,7 +63,7 @@
                                 @endif
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="buttons-form-submit d-flex justify-content-end">
                         <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal">Cerrar</button>
                         <button type="submit" href="#" class="btn btn-primary">
