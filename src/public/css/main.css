@@ -1,0 +1,17 @@
+.edit-form-data > i.fa-edit {
+    color: #1c84c6;
+    margin-right: 20px;
+}
+
+.delete-form-data > i.fa-trash-alt {
+    color: #e41515;
+}
+
+.delete-inline-text {
+    display: inline
+}
+
+.delete-inline-user-text {
+    display: inline;
+    font-weight: bold;
+}

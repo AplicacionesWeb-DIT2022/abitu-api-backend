@@ -9,5 +9,5 @@ class Profesor extends Model
 {
     use HasFactory;
     protected $table = 'profesores';
-    protected $fillable = ['nombre', 'apellido'];
+    protected $fillable = ['nombre', 'apellido', 'dni', 'edad'];
 }
